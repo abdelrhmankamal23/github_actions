@@ -1,0 +1,11 @@
+#! /bin/bash
+
+EXPECTED="Hello, Test!"
+OUTPUT=$(node -e "console.log('reqire('./src/app')('Test'))")
+if [ "$OUTPUT" == "$EXPECTED" ]; then
+  echo "Test passed Mabrooook"
+  exit 0
+else
+  echo "Test failed: expected '$EXPECTED' but got '$OUTPUT'"
+  exit 1
+fi
