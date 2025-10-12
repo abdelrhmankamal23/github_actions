@@ -1,5 +1,15 @@
 on:
   workflow_dispatch:
+    inputs:
+      environment:
+        description: "Choose environemnt"
+        required:  true
+        default: "staging"
+        type: choice
+        options:
+          - staging
+          - testing
+          - production
 
 jobs:
   deploy:
